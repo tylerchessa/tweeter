@@ -1,0 +1,26 @@
+.nav {
+  position: fixed;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  height: 120px;
+  width: 100%;
+  color: #FFFFFF;
+  background-color: #4056A1;
+  font-family: 'Bungee', sans-serif;
+  justify-content: space-between;
+  display: flex;
+ }
+
+ .navTweet {
+  font-family: 'Source Sans Pro', sans-serif;
+ }
+
+ .navDiv {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .navDiv i {
+  display: flex;
+  justify-content: center;
+ }

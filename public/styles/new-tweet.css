@@ -1,0 +1,31 @@
+.new-tweet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#tweet-text {
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px; 
+  border-bottom: 1px solid black;
+  width: 100%;
+  resize: none;
+}
+
+button[type=submit] {
+  background-color: #4056A1;
+  font-family: 'Bungee', sans-serif;
+  color: white;
+}
+
+form {
+  padding: 15px 0 px;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+}
