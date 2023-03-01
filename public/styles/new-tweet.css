@@ -3,13 +3,14 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 10px 0;
 }
 
 #tweet-text {
   border-top: 0px;
   border-right: 0px;
   border-left: 0px; 
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
   width: 100%;
   resize: none;
 }

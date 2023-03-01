@@ -30,7 +30,90 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #f4f1ec;
+  flex-direction: column;
 
+}
+
+#tweets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 15px 0;
+}
+
+article.tweet {
+  padding:15px;
+  border: 2px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+article.tweet:hover {
+  box-shadow: 5px 5px grey;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tweet-profile img {
+  width: 10%;
+  height: auto;
+}
+
+.tweet-profile {
+  padding-left: 1em;
+  font-size: 0.8rem;
+  padding-bottom: 2%;
+  display: flex;
+  align-items: center;
+}
+
+.tweet-username {
+  padding-right: 1em;
+  font-size: 0.8rem;
+  padding-bottom: 2%;
+  display: flex;
+  align-items: center;
+}
+
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tweet-text {
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  width: 90%;
+  border-bottom: 2px solid black;
+}
+
+.tweet-date {
+  padding-left: 1em;
+  font-size: 0.8rem;
+  padding-top: 2%;
+}
+
+.tweet-actions {
+  padding-right: 1em;
+  font-size: 0.8rem;
+  padding-top: 2%;
+}
+
+.tweet-actions i:hover {
+  color: goldenrod
 }
 
 /*
