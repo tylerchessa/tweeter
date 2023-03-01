@@ -29,3 +29,7 @@ form {
   display: flex;
   justify-content: space-between;
 }
+
+.redColor {
+  color: red;
+}
