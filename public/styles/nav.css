@@ -27,5 +27,11 @@
 
  .navDiv i:hover {
   color: red;
+  transform: scale(1.2);
  }
 
+ @media only screen and (min-width: 1000px) {
+  .nav {
+  z-index: 1;
+  }
+ };

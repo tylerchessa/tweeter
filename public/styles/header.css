@@ -14,3 +14,12 @@ background-image: url("https://www.transparenttextures.com/patterns/asfalt-light
   justify-content: center;
   align-items: center;
 }
+
+@media only screen and (min-width: 1000px) {
+  .profileHeader {
+    height: 700px;
+    position: sticky;
+    top: 120px;
+    z-index: 0;
+  }
+}

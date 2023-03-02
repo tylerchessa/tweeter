@@ -11,17 +11,23 @@ let $tweetError1 = `
 let $tweetError2 = `
 <div class="error2">You must enter less than 140 characters to tweet with Tweeter</div>
 `
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 $(document).ready(function() {
 const createTweetElement = (eachTweet) => {
   const userT = eachTweet.user;
+  let $safeHTML = escape(eachTweet.content.text);
   let markup = `
   <article class="tweet">
   <header>
     <div class="tweet-profile"><img src=${userT.avatars}></img> ${userT.name}</div>
     <div class="tweet-username">${userT.handle}</div>
    </header>
-  <div class="tweet-text">${escape(eachTweet.content.text)}</div>
+  <div class="tweet-text">${$safeHTML}</div>
   <footer>
     <div class="tweet-date">${timeago.format(eachTweet.created_at)}</div>
     <div class="tweet-actions">
@@ -35,6 +41,7 @@ const createTweetElement = (eachTweet) => {
 return markup
 };
 
+
 const renderTweets = (tweets) => {
   for (let tweet of tweets) {
     createTweetElement(tweet)
@@ -42,6 +49,7 @@ const renderTweets = (tweets) => {
     $('#tweets').prepend($tweet);
   }
 };
+
 
 // renderTweets(data);
 
@@ -57,7 +65,7 @@ loadTweets();
 
 $("#tweet-form").submit(function(event) {
   event.preventDefault();
-  const tweet = $(this).find('#tweet-text').val()
+  const tweet = $('#tweet-text').val()
   if (!tweet) {
     $('.error1').slideDown(1000)
     return;
@@ -76,7 +84,26 @@ $.post( "/tweets", $(this).serialize() )
 })
 });
 
-$('.navdiv').on('click', (function() {
-  $('#tweetform').slideToggle(1000)
-}))
+$('.navDiv').on('click', function() {
+  $('#tweet-form').slideToggle(1000);
+  $('#tweet-text').focus()
+});
+
+let $topBotton = $('#backToTop');
+$(window).on('scroll', function() {
+    if ($(window).scrollTop() > 500) {
+        $topBotton.fadeIn();
+    } else {
+        $topBotton.fadeOut();
+    }
+});
+$topBotton.on('click', function(event) {
+    event.preventDefault();
+    $('html, body').animate({
+        scrollTop: 0
+    }, '500');
+    $('#tweet-form').slideDown(1000);
+  $('#tweet-text').focus()
+});
+
 });

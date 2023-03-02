@@ -135,9 +135,41 @@ article.tweet footer {
 }
 
 #tweet-form {
-  display: hidden;
+  display: none;
 }
 
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 20px;
+  bottom: 15px;
+  z-index: 99;
+  color: red;
+  background-color: white;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 50%;
+}
+
+.back-to-top:hover {
+  color: white;
+  background-color: red;
+  transform: scale(1.2);
+}
+
+@media only screen and (min-width: 1000px) {
+  body {
+    flex-direction: row;
+    align-items: start;
+    
+  }
+  .container {
+    margin: 130px 20px 0 20px;
+    
+  }
+
+}
+  
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
