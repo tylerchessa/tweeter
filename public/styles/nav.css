@@ -24,3 +24,8 @@
   display: flex;
   justify-content: center;
  }
+
+ .navDiv i:hover {
+  color: red;
+ }
+

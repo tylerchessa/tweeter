@@ -38,7 +38,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   padding: 15px 0;
 }
@@ -51,6 +51,7 @@ article.tweet {
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  margin: 5px 0;
 }
 
 article.tweet:hover {
@@ -65,13 +66,14 @@ article.tweet header {
 }
 
 .tweet-profile img {
-  width: 10%;
+  padding-right: 1em;;
+  width: 25%;
   height: auto;
 }
 
 .tweet-profile {
   padding-left: 1em;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding-bottom: 2%;
   display: flex;
   align-items: center;
@@ -79,7 +81,7 @@ article.tweet header {
 
 .tweet-username {
   padding-right: 1em;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding-bottom: 2%;
   display: flex;
   align-items: center;
@@ -114,6 +116,26 @@ article.tweet footer {
 
 .tweet-actions i:hover {
   color: goldenrod
+}
+
+.error1 {
+  padding: 3px;
+  border: 3px solid red;
+  color: red;
+  margin: 1em;
+  display: none;
+}
+
+.error2 {
+  padding: 3px;
+  border: 3px solid red;
+  color: red;
+  margin: 1em;
+  display: none;
+}
+
+#tweet-form {
+  display: hidden;
 }
 
 /*

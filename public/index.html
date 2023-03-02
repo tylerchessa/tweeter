@@ -27,6 +27,10 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
 
+    <!-- Time since tweet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
   </head>
 
   <body>
@@ -55,7 +59,9 @@
     <main class="container">
       <section class="new-tweet">
         <!-- <h2></h2> -->
-        <form method="post" action="/tweets/">
+        <div class="error1">You must enter at least 1 character to tweet with Tweeter</div>
+        <div class="error2">You must enter less than 140 characters to tweet with Tweeter</div>
+        <form id="tweet-form" method="post" action="/tweets">
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="button">
@@ -65,23 +71,10 @@
         </form>
       </section>
       <section class="all-tweets" id="tweets">
-        <article class="tweet">
-          <header>
-            <div class="tweet-profile"><img src="/images/profile-hex.png"> Profile Name</div>
-            <div class="tweet-username">@username</div>
-           </header>
-          <div class="tweet-text">What a beautiful day</div>
-          <footer>
-            <div class="tweet-date">10 days ago</div>
-            <div class="tweet-actions">
-              <i class="fa-regular fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-regular fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+        
       </section>
     </main>
   </body>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
 </html>
