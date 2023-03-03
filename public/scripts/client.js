@@ -62,6 +62,40 @@ const loadTweets = () => {
 }
 loadTweets();
 
+// const characterError = () => {
+// const tweet = $('#tweet-text').val()
+//   if (!tweet) {
+//     $('.error1').slideDown(1000)
+//     return false;
+//   }
+//   if (tweet.length > 140) {
+//     $('.error2').slideDown(1000)
+//     return false;
+//   }
+//   $('.error1').slideUp(1000)
+//   $('.error2').slideUp(1000)
+//   return true;
+// };
+
+
+// $("#tweet-form").submit(function(event) {
+//   event.preventDefault();
+//   if (!characterError()) {
+//     return;
+//   }
+// $.post( "/tweets", $(this).serialize() )
+// .then(function () {
+//   loadTweets();
+//   $('#tweet-text').val('')
+//   $('#tweet-text').parent().find('.counter').text(140);
+// })
+// });
+
+// $("textarea").on("input", function () {
+//   console.log('hey')
+//   characterError();
+// });
+  
 const characterError = () => {
 const tweet = $('#tweet-text').val()
   if (!tweet) {
@@ -80,9 +114,18 @@ const tweet = $('#tweet-text').val()
 
 $("#tweet-form").submit(function(event) {
   event.preventDefault();
-  if (!characterError()) {
-    return;
-  }
+  
+const tweet = $('#tweet-text').val()
+if (!tweet) {
+  $('.error1').slideDown(1000)
+  return false;
+}
+if (tweet.length > 140) {
+  $('.error2').slideDown(1000)
+  return false;
+}
+$('.error1').slideUp(1000)
+$('.error2').slideUp(1000)
 $.post( "/tweets", $(this).serialize() )
 .then(function () {
   loadTweets();
@@ -92,10 +135,14 @@ $.post( "/tweets", $(this).serialize() )
 });
 
 $("textarea").on("input", function () {
-  console.log('hey')
-  characterError();
+const tweet = $('#tweet-text').val()
+if (tweet) {
+  $('.error1').slideUp(1000)
+}
+if (tweet.length <= 140) {
+  $('.error2').slideUp(1000)
+}
 });
-  
 
 $('.navDiv').on('click', function() {
   $('#tweet-form').slideToggle(1000);

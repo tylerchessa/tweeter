@@ -13,15 +13,28 @@ html {
 /*
  * Global layout stuff
  */
+ $layoutBackground: #f4f1ec;
+ $errorColor: red;
+ $errorBorder: 3px solid red;
+ $fontBody: 'Source Sans Pro', sans-serif;
+
+ @mixin error {
+  padding: 3px;
+  border: $errorBorder;
+  color: $errorColor;
+  margin: 1em;
+  display: none;
+ }
+
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: $layoutBackground;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $fontBody;
 }
 
 .container {
@@ -29,7 +42,7 @@ body {
   width: 90%;
   align-items: center;
   justify-content: center;
-  background-color: #f4f1ec;
+  background-color: $layoutBackground;
   flex-direction: column;
 
 }
@@ -119,19 +132,11 @@ article.tweet footer {
 }
 
 .error1 {
-  padding: 3px;
-  border: 3px solid red;
-  color: red;
-  margin: 1em;
-  display: none;
+  @include error
 }
 
 .error2 {
-  padding: 3px;
-  border: 3px solid red;
-  color: red;
-  margin: 1em;
-  display: none;
+ @include error
 }
 
 #tweet-form {
@@ -144,7 +149,7 @@ article.tweet footer {
   right: 20px;
   bottom: 15px;
   z-index: 99;
-  color: red;
+  color: #ff0000;
   background-color: white;
   cursor: pointer;
   padding: 10px 12px;
@@ -153,7 +158,7 @@ article.tweet footer {
 
 .back-to-top:hover {
   color: white;
-  background-color: red;
+  background-color: #ff0000;
   transform: scale(1.2);
 }
 

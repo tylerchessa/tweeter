@@ -19,12 +19,10 @@
   display: flex;
   flex-direction: column;
 }
-
 .navDiv i {
   display: flex;
   justify-content: center;
 }
-
 .navDiv i:hover {
   color: red;
   transform: scale(1.2);

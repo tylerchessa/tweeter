@@ -1,3 +1,6 @@
+$navBackground: #4056A1;
+$fontBody: 'Source Sans Pro', sans-serif;
+
 .nav {
   position: fixed;
   padding-left: 1.5em;
@@ -5,7 +8,7 @@
   height: 120px;
   width: 100%;
   color: #FFFFFF;
-  background-color: #4056A1, 1;
+  background-color: $navBackground, 1;
   font-family: 'Bungee', sans-serif;
   justify-content: space-between;
   display: flex;
@@ -13,27 +16,27 @@
  }
 
  .navTweet {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $fontBody;
  }
 
  .navDiv {
   display: flex;
   flex-direction: column;
- }
+    i {
+     display: flex;
+     justify-content: center;
+     
+     &:hover {
+      color: red;
+      transform: scale(1.2);
+     }
+    }
+}
 
- .navDiv i {
-  display: flex;
-  justify-content: center;
- }
-
- .navDiv i:hover {
-  color: red;
-  transform: scale(1.2);
- }
 
  @media only screen and (min-width: 1000px) {
   .nav {
-  
+  background-color: $navBackground;
   z-index: 1;
   }
  };
