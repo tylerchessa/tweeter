@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,6 +13,7 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container {
@@ -31,6 +31,7 @@ body {
   justify-content: center;
   background-color: #f4f1ec;
   flex-direction: column;
+
 }
 
 #tweets {
@@ -43,7 +44,7 @@ body {
 }
 
 article.tweet {
-  padding: 15px;
+  padding:15px;
   border: 2px solid black;
   width: 100%;
   display: flex;
@@ -65,7 +66,7 @@ article.tweet header {
 }
 
 .tweet-profile img {
-  padding-right: 1em;
+  padding-right: 1em;;
   width: 25%;
   height: auto;
 }
@@ -114,7 +115,7 @@ article.tweet footer {
 }
 
 .tweet-actions i:hover {
-  color: goldenrod;
+  color: goldenrod
 }
 
 .error1 {
@@ -160,11 +161,15 @@ article.tweet footer {
   body {
     flex-direction: row;
     align-items: start;
+    
   }
   .container {
     margin: 130px 20px 0 20px;
+    
   }
+
 }
+  
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

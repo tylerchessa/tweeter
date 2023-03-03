@@ -119,13 +119,28 @@ $topBotton.on('click', function(event) {
   $('#tweet-text').focus()
 });
 
+
 let $backgroundNav = $('.nav')
 $(window).on('scroll', function() {
+if ($(window).width() < 1000) {
 if ($(window).scrollTop() > 570) {
   $backgroundNav.css("background-color", "#4056A1");
 } else {
   $backgroundNav.css("background-color", "initial");
 }
+} else {
+  $backgroundNav.css("background-color", '#4056A1');
+}
 })
+
+$(window).resize(function() {
+  if ($(window).width() < 1000 && $(window).scrollTop() <= 570) {
+    $backgroundNav.css("background-color", "initial");
+  } else {
+    $backgroundNav.css("background-color", "#4056A1");
+  }
+});
+
+
 
 });
