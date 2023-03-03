@@ -5,10 +5,11 @@
   height: 120px;
   width: 100%;
   color: #FFFFFF;
-  background-color: #4056A1;
+  background-color: #4056A1, 1;
   font-family: 'Bungee', sans-serif;
   justify-content: space-between;
   display: flex;
+  
  }
 
  .navTweet {

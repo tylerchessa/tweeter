@@ -62,20 +62,27 @@ const loadTweets = () => {
 }
 loadTweets();
 
-
-$("#tweet-form").submit(function(event) {
-  event.preventDefault();
-  const tweet = $('#tweet-text').val()
+const characterError = () => {
+const tweet = $('#tweet-text').val()
   if (!tweet) {
     $('.error1').slideDown(1000)
-    return;
+    return false;
   }
   if (tweet.length > 140) {
     $('.error2').slideDown(1000)
-    return;
+    return false;
   }
   $('.error1').slideUp(1000)
   $('.error2').slideUp(1000)
+  return true;
+};
+
+
+$("#tweet-form").submit(function(event) {
+  event.preventDefault();
+  if (!characterError()) {
+    return;
+  }
 $.post( "/tweets", $(this).serialize() )
 .then(function () {
   loadTweets();
@@ -83,6 +90,12 @@ $.post( "/tweets", $(this).serialize() )
   $('#tweet-text').parent().find('.counter').text(140);
 })
 });
+
+$("textarea").on("input", function () {
+  console.log('hey')
+  characterError();
+});
+  
 
 $('.navDiv').on('click', function() {
   $('#tweet-form').slideToggle(1000);
@@ -105,5 +118,14 @@ $topBotton.on('click', function(event) {
     $('#tweet-form').slideDown(1000);
   $('#tweet-text').focus()
 });
+
+let $backgroundNav = $('.nav')
+$(window).on('scroll', function() {
+if ($(window).scrollTop() > 570) {
+  $backgroundNav.css("background-color", "#4056A1");
+} else {
+  $backgroundNav.css("background-color", "initial");
+}
+})
 
 });
