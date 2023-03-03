@@ -5,12 +5,6 @@
  */
 
 
-let $tweetError1 = `
-<div class="error1">You must enter at least 1 character to tweet with Tweeter</div>
-`
-let $tweetError2 = `
-<div class="error2">You must enter less than 140 characters to tweet with Tweeter</div>
-`
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -62,39 +56,6 @@ const loadTweets = () => {
 }
 loadTweets();
 
-// const characterError = () => {
-// const tweet = $('#tweet-text').val()
-//   if (!tweet) {
-//     $('.error1').slideDown(1000)
-//     return false;
-//   }
-//   if (tweet.length > 140) {
-//     $('.error2').slideDown(1000)
-//     return false;
-//   }
-//   $('.error1').slideUp(1000)
-//   $('.error2').slideUp(1000)
-//   return true;
-// };
-
-
-// $("#tweet-form").submit(function(event) {
-//   event.preventDefault();
-//   if (!characterError()) {
-//     return;
-//   }
-// $.post( "/tweets", $(this).serialize() )
-// .then(function () {
-//   loadTweets();
-//   $('#tweet-text').val('')
-//   $('#tweet-text').parent().find('.counter').text(140);
-// })
-// });
-
-// $("textarea").on("input", function () {
-//   console.log('hey')
-//   characterError();
-// });
   
 const characterError = () => {
 const tweet = $('#tweet-text').val()
