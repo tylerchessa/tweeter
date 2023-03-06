@@ -75,7 +75,8 @@ $(document).ready(function() {
         loadTweets();
         $('#tweet-text').val('');
         $('#tweet-text').parent().find('.counter').text(140);
-      });
+      })
+      .catch(alert('error did not submit, please refresh page and try again'))
   });
 
   //if user fixes error, the message will dissapear

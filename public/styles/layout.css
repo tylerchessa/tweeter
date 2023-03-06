@@ -99,6 +99,7 @@ article.tweet footer {
   padding: 1em;
   width: 90%;
   border-bottom: 2px solid black;
+  word-break: break-all;
 }
 
 .tweet-date {
